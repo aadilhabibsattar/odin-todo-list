@@ -4,7 +4,7 @@
 :root {
    --backgroundColor: #222831;
    --sidebarColor: #313a46;
-   --secondaryColor: #393e46;
+   --secondaryColor: #747e8f;
    --blueColor: #00adb5;
    --lightColor: #eeeeee;
    --greenColor: #01965a;
@@ -22,6 +22,7 @@ body {
    background-color: var(--backgroundColor);
    font-family: "Manrope", sans-serif;
    color: var(--lightColor);
+   overflow-x: hidden;
 }
 
 svg {
@@ -85,6 +86,7 @@ button {
 .sidebar {
    width: 20vw;
    height: 100vh;
+   position: fixed;
 
    padding: 1rem;
 
@@ -186,4 +188,74 @@ button {
 
 .plus-icon:hover {
    background-color: var(--sidebarHoverColor);
+}
+
+/* ! task */
+
+.task-view {
+   margin-left: 20vw;
+   width: 80vw;
+   padding: 4vw;
+   height: 200vh;
+}
+
+.view-title {
+   text-align: left;
+   width: 80vw;
+
+   font-weight: bold;
+   font-size: 2rem;
+   margin-bottom: 2rem;
+}
+
+.task-container {
+   display: flex;
+   flex-direction: column;
+   gap: 1.5rem;
+}
+
+.task {
+   display: flex;
+   align-items: flex-start;
+   gap: 0.8rem;
+}
+
+.checkbox {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   width: 1.4rem;
+   aspect-ratio: 1;
+   border: 1px solid var(--secondaryColor);
+   transform: translate(0, 0.1rem);
+   border-radius: 100%;
+
+   flex-shrink: 0;
+
+   cursor: pointer;
+   user-select: none;
+   -webkit-user-select: none;
+}
+
+.checkbox > svg {
+   width: 1rem;
+   opacity: 0;
+}
+
+.checked {
+   background-color: var(--greenColor);
+}
+
+.checked > svg {
+   opacity: 1;
+}
+
+.task-title {
+   user-select: none;
+   -webkit-user-select: none;
+}
+
+.task-content {
+   font-size: 1.1rem;
 }
