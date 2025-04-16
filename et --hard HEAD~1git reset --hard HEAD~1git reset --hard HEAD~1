@@ -1,0 +1,23 @@
+[33mcommit 058abf3cfee7301fcdb1ab1e31ae8f13ddab0987[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Aadil <aadilhabibsattar@gmail.com>
+Date:   Tue Apr 15 21:17:48 2025 +0600
+
+    added task class and styling
+
+[33mcommit 169a1d4c807dbf1b2999803c6e8086595da974c7[m
+Author: Aadil <aadilhabibsattar@gmail.com>
+Date:   Mon Apr 14 18:52:39 2025 +0600
+
+    added and styled sidebar elements and add task button
+
+[33mcommit 92b5d0708d76a2b83c85df1ce1066190ac1eec84[m
+Author: Aadil <aadilhabibsattar@gmail.com>
+Date:   Fri Apr 11 19:43:37 2025 +0600
+
+    update initial css
+
+[33mcommit f718008e024123fcdaf12f29abcb5a8ac1139f81[m
+Author: Aadil <aadilhabibsattar@gmail.com>
+Date:   Thu Apr 10 23:37:20 2025 +0600
+
+    add project files

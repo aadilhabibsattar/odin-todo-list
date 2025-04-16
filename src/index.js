@@ -17,7 +17,7 @@ class Task {
             </div>
             <div class="task-title">${this.title}</div>
             <div class="task-description"></div>
-            <div class="duedate"></div>
+            <div class="due-date"></div>
          </div>`;
 
       return html;
@@ -35,6 +35,6 @@ addTaskToPage(taskContent);
 const checkboxes = document.querySelectorAll(".checkbox");
 checkboxes.forEach((checkbox) => {
    checkbox.addEventListener("click", () => {
-      checkbox.classList.toggle("checked");
+      checkbox.classList.toggle("checkbox--checked");
    });
 });
