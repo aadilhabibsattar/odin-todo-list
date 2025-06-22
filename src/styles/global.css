@@ -2,53 +2,54 @@
 @import "./task-button.css";
 @import "./sidebar.css";
 @import "./tasks.css";
+@import "./dialog.css";
 
 /* Base styles */
 :root {
-   --backgroundColor: #222831;
-   --sidebarColor: #313a46;
-   --secondaryColor: #747e8f;
-   --blueColor: #00adb5;
-   --lightColor: #eeeeee;
-   --greenColor: #01965a;
-   --redColor: #ef5132;
-   --sidebarHoverColor: rgba(32, 35, 40, 0.3);
+    --backgroundColor: #222831;
+    --sidebarColor: #313a46;
+    --secondaryColor: #747e8f;
+    --blueColor: #008087;
+    --lightColor: #eeeeee;
+    --greenColor: #01965a;
+    --redColor: #ef5132;
+    --sidebarHoverColor: rgba(32, 35, 40, 0.3);
 }
 
 * {
-   box-sizing: border-box;
-   margin: 0;
-   padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-   background-color: var(--backgroundColor);
-   font-family: "Manrope", sans-serif;
-   color: var(--lightColor);
-   overflow-x: hidden;
+    background-color: var(--backgroundColor);
+    font-family: "Manrope", sans-serif;
+    color: var(--lightColor);
+    overflow-x: hidden;
 }
 
 svg {
-   fill: var(--lightColor);
-   width: 2rem;
-   cursor: pointer;
+    fill: var(--lightColor);
+    width: 2rem;
+    cursor: pointer;
 }
 
 button {
-   background-color: transparent;
+    background-color: transparent;
 }
 
 /* body */
 .body-wrapper {
-   display: flex;
+    display: flex;
 }
 
 .icon-container {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   border-radius: 0.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.3rem;
 
-   width: 2.5rem;
-   height: 2.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
 }

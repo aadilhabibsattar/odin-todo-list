@@ -7,6 +7,8 @@
    </head>
    <body>
       <div class="body-wrapper">
+
+         <!-- ! ADD TASK BUTTON -->
          <button class="add-task-button">
             <div class="add-task-button--text">Add Task</div>
             <div class="add-task-button--plus-icon icon-container">
@@ -18,7 +20,10 @@
                </svg>
             </div>
          </button>
+         
+         <!-- ! SIDEBAR -->
          <div class="sidebar">
+
             <div class="sidebar-top">
                <div class="sidebar-top--title">TODO</div>
                <div class="sidebar-top--menu-icon icon-container">
@@ -28,8 +33,11 @@
                   </svg>
                </div>
             </div>
+
             <div class="sidebar-section-container">
+               
                <div class="sidebar-section--header sidebar-tasks-section--header">Tasks</div>
+
                <div class="sidebar-tasks-section">
                   <div class="sidebar-tasks-section--task-page-container">
                      <div class="sidebar-tasks-section--today-page sidebar-page">
@@ -66,6 +74,7 @@
                      </div>
                   </div>
                </div>
+
                <div class="sidebar-projects-section">
                   <div class="sidebar-projects-section--header-container">
                      <div class="sidebar-section--header">My Projects</div>
@@ -89,8 +98,12 @@
                      <div class="sidebar-projects-section--project-page sidebar-page">Placeholder</div>
                   </div>
                </div>
+
             </div>
+
          </div>
+
+         <!-- ! TASK VIEW -->
          <div class="task-view-container">
             <div class="task-view-title">Project Title</div>
             <div class="task-container">
@@ -100,6 +113,35 @@
                </div> -->
             </div>
          </div>
+
+         <!-- ! DIALOG -->
+         <dialog class="dialog">
+            <div class="dialog-wrapper">
+               <div class="form">
+                  <div class="task-title-input-container">
+                     <input class="task-title-input" required type="text" name="name" id="name" placeholder="Task Title" />
+                  </div>
+                  <div class="task-description-input-container">
+                     <input class="task-description-input" type="text" name="name" id="name" placeholder="Task Description" />
+                  </div>
+                  <div class="date-input-container">
+                     <input class="date-input" required type="date">
+                  </div>
+                  <div class="priority-input-container">
+                     Priority:
+                     <select class="priority-input">
+                        <option value="priority-low">LOW</option>
+                        <option value="priority-medium">MEDIUM</option>
+                        <option value="priority-high">HIGH</option>
+                     </select>
+                  </div>
+               </div>
+               <div class="dialog-buttons">
+                  <button class="dialog-close-dialog-btn">Cancel</button>
+                  <button class="dialog-add-task-btn">Add Task</button>
+               </div>
+            </div> 
+         </dialog>
       </div>
    </body>
 </html>
