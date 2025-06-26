@@ -16,6 +16,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     closeModalButton.addEventListener("click", () => {
+        titleInput.value = "";
+        descriptionInput.value = "";
+        dateInput.value = "";
+        priorityInput.selectedIndex = 0;
         dialog.close();
     });
 
@@ -29,6 +33,11 @@ document.addEventListener("DOMContentLoaded", () => {
         task.addTaskToList();
         console.log(task);
         console.log(taskList);
+
+        titleInput.value = "";
+        descriptionInput.value = "";
+        dateInput.value = "";
+        priorityInput.selectedIndex = 0;
         dialog.close();
     });
 });

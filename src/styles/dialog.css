@@ -7,7 +7,6 @@
     border: none;
 
     width: 50vw;
-    /* height: 35vh; */
 
     padding: 1rem;
     border-radius: 1rem;
@@ -82,12 +81,11 @@ input[type="date"] {
     padding: 0.5em;
     font-size: 1rem;
     caret-color: transparent;
-    -moz-appearance: textfield;
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
     cursor: pointer;
-    filter: invert(1); /* Makes icon white */
+    filter: invert(1);
 }
 
 .priority-input-container {
