@@ -1,4 +1,5 @@
-import { Task, taskList } from "./task-generator.js";
+import { Task } from "./task-generator.js";
+import { addTasksToPage } from "./dom.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     const addTaskButton = document.querySelector(".add-task-button");
@@ -10,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const descriptionInput = document.querySelector(".task-description-input");
     const dateInput = document.querySelector(".date-input");
     const priorityInput = document.querySelector(".priority-input");
+    const projectInput = document.querySelector(".project-input");
 
     addTaskButton.addEventListener("click", () => {
         dialog.showModal();
@@ -20,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
         descriptionInput.value = "";
         dateInput.value = "";
         priorityInput.selectedIndex = 0;
+        projectInput.selectedIndex = 0;
         dialog.close();
     });
 
@@ -28,16 +31,17 @@ document.addEventListener("DOMContentLoaded", () => {
         const description = descriptionInput.value;
         const dueDate = dateInput.value;
         const priority = priorityInput.value;
+        const project = projectInput.value;
 
-        const task = new Task(title, description, dueDate, priority);
+        const task = new Task(title, description, dueDate, priority, project);
         task.addTaskToList();
-        console.log(task);
-        console.log(taskList);
+        addTasksToPage();
 
         titleInput.value = "";
         descriptionInput.value = "";
         dateInput.value = "";
         priorityInput.selectedIndex = 0;
+        projectInput.selectedIndex = 0;
         dialog.close();
     });
 });

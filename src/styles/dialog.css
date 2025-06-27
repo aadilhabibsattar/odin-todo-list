@@ -58,7 +58,7 @@ input {
     width: 100%;
     height: 2.5rem;
     padding: 0.5rem;
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-family: "Manrope", sans-serif;
 
     border: none;
@@ -71,6 +71,17 @@ input {
 input::placeholder {
     color: white;
     opacity: 0.5;
+}
+
+.task-description-input {
+    height: 1.8rem;
+    padding: 0.5rem;
+    font-size: 0.8rem;
+}
+
+.task-details-container {
+    display: flex;
+    gap: 1rem;
 }
 
 input[type="date"] {
@@ -91,7 +102,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .priority-input-container {
     padding: 0.5rem;
 }
+
 select {
     background-color: var(--sidebarColor);
+    height: 1.5rem;
     color: white;
+}
+
+.project-input-container {
+    padding: 0.5rem;
 }

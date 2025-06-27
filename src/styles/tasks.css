@@ -57,11 +57,17 @@
     opacity: 1;
 }
 
-.task-title {
-    user-select: none;
-    -webkit-user-select: none;
+.task-content {
+    display: flex;
+    flex-direction: column;
 }
 
-.task-content {
-    font-size: 1.1rem;
+.task-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.task-description {
+    font-size: 1rem;
+    color: var(--secondaryColor);
 }
