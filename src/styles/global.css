@@ -7,7 +7,7 @@
 /* Base styles */
 :root {
     --backgroundColor: #222831;
-    --sidebarColor: #313a46;
+    --sidebarColor: hsl(214, 18%, 23%);
     --secondaryColor: #747e8f;
     --blueColor: #008087;
     --lightColor: #eeeeee;
