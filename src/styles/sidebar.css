@@ -1,118 +1,120 @@
 .sidebar {
-  width: 20vw;
-  height: 100vh;
-  position: fixed;
+    width: 20vw;
+    height: 100vh;
+    top: 0;
+    position: sticky;
+    overflow: hidden;
 
-  padding: 1rem;
+    padding: 1rem;
 
-  background-color: var(--sidebarColor);
+    background-color: var(--sidebarColor);
 }
 
 .sidebar-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 5vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5vh;
 }
 
 .sidebar-top--menu-icon {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .sidebar-top--menu-icon:hover {
-  background-color: var(--sidebarHoverColor);
+    background-color: var(--sidebarHoverColor);
 }
 
 .sidebar-top--title {
-  font-size: 1.5rem;
-  font-weight: bold;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 .sidebar-section-container {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .sidebar-page {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 
-  width: 100%;
-  height: 5vh;
+    width: 100%;
+    height: 5vh;
 
-  border-radius: 0.4rem;
-  cursor: pointer;
-  padding: 1rem;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    padding: 1rem;
 
-  font-size: 1.1rem;
+    font-size: 1.1rem;
 }
 
 .sidebar-tasks--page-label {
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
-  transform: translate(-1rem, 0rem);
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    transform: translate(-1rem, 0rem);
 }
 
 .sidebar-page:hover {
-  background-color: var(--sidebarHoverColor);
+    background-color: var(--sidebarHoverColor);
 }
 
 .sidebar-tasks-section--task-page-container {
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
 }
 
 .sidebar-tasks-section {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 5vh;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5vh;
 }
 
 .sidebar-tasks-section--today-sun-icon > svg,
 .sidebar-tasks-section--completed-check-icon > svg {
-  width: 1.5rem;
-  aspect-ratio: 1;
-  transform: translate(0.5rem, 0rem);
+    width: 1.5rem;
+    aspect-ratio: 1;
+    transform: translate(0.5rem, 0rem);
 }
 
 /* sidebar proejcts */
 .sidebar-projects-section--header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
 }
 
 .sidebar-tasks-section--header {
-  margin-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .sidebar-section--header {
-  font-weight: bold;
-  font-size: 1.3rem;
+    font-weight: bold;
+    font-size: 1.3rem;
 }
 
 .sidebar-projects-section--project-page-container {
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
 }
 .sidebar-projects-section--add-project-button {
-  border: none;
+    border: none;
 }
 
 .sidebar-projects-section--add-project-button-plus-icon {
-  width: 2.5rem;
-  height: 2.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
 }
 
 .sidebar-projects-section--add-project-button-plus-icon > svg {
-  /* fill: var(--blueColor); */
-  fill: var(--lightColor);
+    /* fill: var(--blueColor); */
+    fill: var(--lightColor);
 }
 
 .sidebar-projects-section--add-project-button-plus-icon:hover {
-  background-color: var(--sidebarHoverColor);
+    background-color: var(--sidebarHoverColor);
 }

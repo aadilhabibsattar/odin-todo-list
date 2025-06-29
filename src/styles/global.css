@@ -2,7 +2,8 @@
 @import "./task-button.css";
 @import "./sidebar.css";
 @import "./tasks.css";
-@import "./dialog.css";
+@import "./task-dialog.css";
+@import "./project-dialog.css";
 
 /* Base styles */
 :root {

@@ -3,7 +3,7 @@ import { addTasksToPage } from "./dom.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     const addTaskButton = document.querySelector(".add-task-button");
-    const dialog = document.querySelector(".dialog");
+    const taskDialog = document.querySelector(".task-dialog");
     const closeModalButton = document.querySelector(".dialog-close-dialog-btn");
     const dialogAddTaskButton = document.querySelector(".dialog-add-task-btn");
 
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const projectInput = document.querySelector(".project-input");
 
     addTaskButton.addEventListener("click", () => {
-        dialog.showModal();
+        taskDialog.showModal();
     });
 
     closeModalButton.addEventListener("click", () => {
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
         dateInput.value = "";
         priorityInput.selectedIndex = 0;
         projectInput.selectedIndex = 0;
-        dialog.close();
+        taskDialog.close();
     });
 
     dialogAddTaskButton.addEventListener("click", () => {
@@ -42,6 +42,6 @@ document.addEventListener("DOMContentLoaded", () => {
         dateInput.value = "";
         priorityInput.selectedIndex = 0;
         projectInput.selectedIndex = 0;
-        dialog.close();
+        taskDialog.close();
     });
 });
