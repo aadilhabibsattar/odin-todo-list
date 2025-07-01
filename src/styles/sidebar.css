@@ -118,3 +118,27 @@
 .sidebar-projects-section--add-project-button-plus-icon:hover {
     background-color: var(--sidebarHoverColor);
 }
+
+.sidebar-projects-section--project-page {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.project-delete-icon-container > svg {
+    width: 1.5rem;
+    height: 1.5rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-delete-icon-container {
+    opacity: 0;
+    transition: opacity 0.1s ease-in-out;
+}
+
+.sidebar-projects-section--project-page:hover .project-delete-icon-container {
+    opacity: 1;
+}

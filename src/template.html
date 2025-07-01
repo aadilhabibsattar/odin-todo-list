@@ -92,17 +92,15 @@
                         </div>
                      </button>
                   </div>
-                  <div class="sidebar-projects-section--project-page-container">
-                     <div class="project-dialog-container">
-                        <dialog class="project-dialog">
-                           <input type="text" class="project-name-input">
-                           <button class="project-input-cancel-btn">Cancel</button>
-                           <button class="project-input-submit-btn">Add Project</button>
-                        </dialog>
+                  <dialog class="project-dialog">
+                     <input type="text" class="project-name-input" placeholder="Project Name">
+                     <div class="project-dialog-btn-container">
+                        <button class="project-input-cancel-btn">Cancel</button>
+                        <button class="project-input-submit-btn">Add Project</button>
                      </div>
-                     <div class="sidebar-projects-section--project-page sidebar-page">Placeholder</div>
-                     <div class="sidebar-projects-section--project-page sidebar-page">Placeholder</div>
-                     <div class="sidebar-projects-section--project-page sidebar-page">Placeholder</div>
+                  </dialog>
+                  <div class="sidebar-projects-section--project-page-container">
+                     <!-- Projects get added here -->
                   </div>
                </div>
 
@@ -129,7 +127,7 @@
                      <input class="task-description-input" type="text" name="name" id="name" placeholder="Task Description" />
                   </div>
                   <div class="date-input-container">
-                     <input class="date-input" required type="date">
+                     <input class="date-input" required type="date" />
                   </div>
                   <div class="task-details-container">
                      <div class="priority-input-container">
@@ -143,8 +141,7 @@
                      <div class="project-input-container">
                         Project:
                         <select class="project-input">
-                           <option value="project1">placeholder</option>
-                           <option value="project2">placeholder</option>
+                           <!-- Projects get added here -->
                         </select>
                      </div>
                   </div>
