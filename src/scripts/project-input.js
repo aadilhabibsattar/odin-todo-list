@@ -20,10 +20,10 @@ document.addEventListener("DOMContentLoaded", () => {
     submitBtn.addEventListener("click", () => {
         const projectName = projectNameInput.value;
         projectList.push(projectName);
-        console.log(projectList);
         addProjectToDOM();
         projectDialog.close();
         projectNameInput.value = "";
+        addDeleteProjectListeners();
     });
 });
 
@@ -47,5 +47,18 @@ function addProjectToDOM() {
         const projectOption = `<option value="${project}">${project}</option>`;
         projectContainer.innerHTML += projectDiv;
         projectInput.innerHTML += projectOption;
+    });
+}
+
+function addDeleteProjectListeners() {
+    const deleteProjectIcons = document.querySelectorAll(
+        ".project-delete-icon-container > svg"
+    );
+    deleteProjectIcons.forEach((icon, index) => {
+        icon.addEventListener("click", (e) => {
+            e.stopPropagation();
+            projectList.splice(index, 1);
+            addProjectToDOM();
+        });
     });
 }

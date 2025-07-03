@@ -1,4 +1,4 @@
-import { Task } from "./task-generator.js";
+import { Task, taskList } from "./task-generator.js";
 import { addTasksToPage } from "./dom.js";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -43,5 +43,20 @@ document.addEventListener("DOMContentLoaded", () => {
         priorityInput.selectedIndex = 0;
         projectInput.selectedIndex = 0;
         taskDialog.close();
+        addDeleteTaskListeners();
     });
 });
+
+function addDeleteTaskListeners() {
+    const deleteTaskIcons = document.querySelectorAll(
+        ".delete-icon-container > svg"
+    );
+
+    deleteTaskIcons.forEach((icon, index) => {
+        icon.addEventListener("click", (e) => {
+            e.stopPropagation();
+            taskList.splice(index, 1);
+            addTasksToPage();
+        });
+    });
+}
