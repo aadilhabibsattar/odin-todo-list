@@ -59,6 +59,7 @@ function addDeleteProjectListeners() {
             e.stopPropagation();
             projectList.splice(index, 1);
             addProjectToDOM();
+            addDeleteProjectListeners();
         });
     });
 }

@@ -112,3 +112,15 @@ select {
 .project-input-container {
     padding: 0.5rem;
 }
+
+.priority-low {
+    color: var(--greenColor);
+}
+
+.priority-medium {
+    color: var(--yellowColor);
+}
+
+.priority-high {
+    color: var(--redColor);
+}

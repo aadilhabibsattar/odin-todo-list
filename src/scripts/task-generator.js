@@ -1,14 +1,5 @@
 export const taskList = [];
 
-// const sampleTask = new Task(
-//     "do homework",
-//     "None",
-//     "2025-05-12",
-//     "Medium",
-//     "project1"
-// );
-// sampleTask.addTaskToList();
-
 export class Task {
     constructor(title, description, dueDate, priority, project) {
         this.title = title;
@@ -23,6 +14,7 @@ export class Task {
     }
 
     generateTaskHTML() {
+        const priorityClass = this.priority.toLowerCase();
         const html = `
          <div class="task">
             <div class="checkbox">
@@ -38,11 +30,7 @@ export class Task {
                             <svg class="calendar-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>calendar-blank</title><path d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1" /></svg>
                         </div>
                         ${this.dueDate}</div>
-                        <div class="task-priority">
-                        <div class="task-priority-circle-icon-container>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>circle</title><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" /></svg>
-                        </div>
-                        ${this.priority}</div>
+                        <div class="task-priority priority-${priorityClass}">${this.priority}</div>
                     </div>
                 </div>
                 <div class="delete-icon-container">

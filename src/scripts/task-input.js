@@ -18,33 +18,37 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     closeModalButton.addEventListener("click", () => {
-        titleInput.value = "";
-        descriptionInput.value = "";
-        dateInput.value = "";
-        priorityInput.selectedIndex = 0;
-        projectInput.selectedIndex = 0;
+        resetTaskInputFields();
         taskDialog.close();
     });
 
     dialogAddTaskButton.addEventListener("click", () => {
-        const title = titleInput.value;
-        const description = descriptionInput.value;
+        const title = titleInput.value.trim();
+        const description = descriptionInput.value.trim();
         const dueDate = dateInput.value;
         const priority = priorityInput.value;
         const project = projectInput.value;
 
+        if (title === "" || dueDate === "") {
+            resetTaskInputFields();
+            return;
+        }
+
         const task = new Task(title, description, dueDate, priority, project);
         task.addTaskToList();
         addTasksToPage();
+        resetTaskInputFields();
+        taskDialog.close();
+        addDeleteTaskListeners();
+    });
 
+    function resetTaskInputFields() {
         titleInput.value = "";
         descriptionInput.value = "";
         dateInput.value = "";
         priorityInput.selectedIndex = 0;
         projectInput.selectedIndex = 0;
-        taskDialog.close();
-        addDeleteTaskListeners();
-    });
+    }
 });
 
 function addDeleteTaskListeners() {
@@ -57,6 +61,7 @@ function addDeleteTaskListeners() {
             e.stopPropagation();
             taskList.splice(index, 1);
             addTasksToPage();
+            addDeleteTaskListeners();
         });
     });
 }
