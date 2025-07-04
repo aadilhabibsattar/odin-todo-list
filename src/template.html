@@ -1,157 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Document</title>
-   </head>
-   <body>
-      <div class="body-wrapper">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="body-wrapper">
+            <!-- ! ADD TASK BUTTON -->
+            <button class="add-task-button">
+                <div class="add-task-button--text">Add Task</div>
+                <div class="add-task-button--plus-icon icon-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <title>plus-circle</title>
+                        <path
+                            d="M17,13H13V17H11V13H7V11H11V7H13V11H17M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"
+                        />
+                    </svg>
+                </div>
+            </button>
 
-         <!-- ! ADD TASK BUTTON -->
-         <button class="add-task-button">
-            <div class="add-task-button--text">Add Task</div>
-            <div class="add-task-button--plus-icon icon-container">
-               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                  <title>plus-circle</title>
-                  <path
-                     d="M17,13H13V17H11V13H7V11H11V7H13V11H17M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"
-                  />
-               </svg>
-            </div>
-         </button>
-         
-         <!-- ! SIDEBAR -->
-         <div class="sidebar">
+            <!-- ! SIDEBAR -->
+            <div class="sidebar">
+                <div class="sidebar-top">
+                    <div class="sidebar-top--title">TODO</div>
+                    <div class="sidebar-top--menu-icon icon-container">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                        >
+                            <title>menu</title>
+                            <path
+                                d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z"
+                            />
+                        </svg>
+                    </div>
+                </div>
 
-            <div class="sidebar-top">
-               <div class="sidebar-top--title">TODO</div>
-               <div class="sidebar-top--menu-icon icon-container">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                     <title>menu</title>
-                     <path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
-                  </svg>
-               </div>
-            </div>
+                <div class="sidebar-section-container">
+                    <div
+                        class="sidebar-section--header sidebar-tasks-section--header"
+                    >
+                        Tasks
+                    </div>
 
-            <div class="sidebar-section-container">
-               
-               <div class="sidebar-section--header sidebar-tasks-section--header">Tasks</div>
-
-               <div class="sidebar-tasks-section">
-                  <div class="sidebar-tasks-section--task-page-container">
-                     <div class="sidebar-tasks-section--today-page sidebar-page">
-                        <div class="sidebar-tasks--page-label">
-                           <div class="sidebar-tasks-section--today-sun-icon icon-container">
-                              <svg
-                                 xmlns="http://www.w3.org/2000/svg"
-                                 viewBox="0 0 24 24"
-                              >
-                                 <title>white-balance-sunny</title>
-                                 <path
-                                    d="M3.55 19.09L4.96 20.5L6.76 18.71L5.34 17.29M12 6C8.69 6 6 8.69 6 12S8.69 18 12 18 18 15.31 18 12C18 8.68 15.31 6 12 6M20 13H23V11H20M17.24 18.71L19.04 20.5L20.45 19.09L18.66 17.29M20.45 5L19.04 3.6L17.24 5.39L18.66 6.81M13 1H11V4H13M6.76 5.39L4.96 3.6L3.55 5L5.34 6.81L6.76 5.39M1 13H4V11H1M13 20H11V23H13"
-                                 />
-                              </svg>
-                           </div>
-                           <div class="sidebar-tasks-section--today-text">Today</div>
+                    <div class="sidebar-tasks-section">
+                        <div class="sidebar-tasks-section--task-page-container">
+                            <div
+                                class="sidebar-tasks-section--today-page sidebar-page"
+                            >
+                                <div class="sidebar-tasks--page-label">
+                                    <div
+                                        class="sidebar-tasks-section--today-sun-icon icon-container"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <title>white-balance-sunny</title>
+                                            <path
+                                                d="M3.55 19.09L4.96 20.5L6.76 18.71L5.34 17.29M12 6C8.69 6 6 8.69 6 12S8.69 18 12 18 18 15.31 18 12C18 8.68 15.31 6 12 6M20 13H23V11H20M17.24 18.71L19.04 20.5L20.45 19.09L18.66 17.29M20.45 5L19.04 3.6L17.24 5.39L18.66 6.81M13 1H11V4H13M6.76 5.39L4.96 3.6L3.55 5L5.34 6.81L6.76 5.39M1 13H4V11H1M13 20H11V23H13"
+                                            />
+                                        </svg>
+                                    </div>
+                                    <div
+                                        class="sidebar-tasks-section--today-text"
+                                    >
+                                        Today
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="sidebar-tasks-section--completed-page sidebar-page"
+                            >
+                                <div class="sidebar-tasks--page-label">
+                                    <div
+                                        class="sidebar-tasks-section--completed-check-icon icon-container"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <title>check-circle-outline</title>
+                                            <path
+                                                d="M12 2C6.5 2 2 6.5 2 12S6.5 22 12 22 22 17.5 22 12 17.5 2 12 2M12 20C7.59 20 4 16.41 4 12S7.59 4 12 4 20 7.59 20 12 16.41 20 12 20M16.59 7.58L10 14.17L7.41 11.59L6 13L10 17L18 9L16.59 7.58Z"
+                                            />
+                                        </svg>
+                                    </div>
+                                    <div
+                                        class="sidebar-tasks-section--completed-text"
+                                    >
+                                        Completed
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                     </div>
-                     <div class="sidebar-tasks-section--completed-page sidebar-page">
-                        <div class="sidebar-tasks--page-label">
-                           <div class="sidebar-tasks-section--completed-check-icon icon-container">
-                              <svg
-                                 xmlns="http://www.w3.org/2000/svg"
-                                 viewBox="0 0 24 24"
-                              >
-                                 <title>check-circle-outline</title>
-                                 <path
-                                    d="M12 2C6.5 2 2 6.5 2 12S6.5 22 12 22 22 17.5 22 12 17.5 2 12 2M12 20C7.59 20 4 16.41 4 12S7.59 4 12 4 20 7.59 20 12 16.41 20 12 20M16.59 7.58L10 14.17L7.41 11.59L6 13L10 17L18 9L16.59 7.58Z"
-                                 />
-                              </svg>
-                           </div>
-                           <div class="sidebar-tasks-section--completed-text">Completed</div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
+                    </div>
 
-               <div class="sidebar-projects-section">
-                  <div class="sidebar-projects-section--header-container">
-                     <div class="sidebar-section--header">My Projects</div>
-                     <button class="sidebar-projects-section--add-project-button">
-                        <div class="sidebar-projects-section--add-project-button-plus-icon icon-container" icon-div">
-                           <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 24 24"
-                           >
-                              <title>plus</title>
-                              <path
-                                 d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z"
-                              />
-                           </svg>
+                    <div class="sidebar-projects-section">
+                        <div class="sidebar-projects-section--header-container">
+                            <div class="sidebar-section--header">
+                                My Projects
+                            </div>
+                            <button
+                                class="sidebar-projects-section--add-project-button"
+                            >
+                                <div
+                                    class="sidebar-projects-section--add-project-button-plus-icon icon-container icon-div"
+                                >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <title>plus</title>
+                                        <path
+                                            d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z"
+                                        />
+                                    </svg>
+                                </div>
+                            </button>
                         </div>
-                     </button>
-                  </div>
-                  <dialog class="project-dialog">
-                     <input type="text" class="project-name-input" placeholder="Project Name">
-                     <div class="project-dialog-btn-container">
-                        <button class="project-input-cancel-btn">Cancel</button>
-                        <button class="project-input-submit-btn">Add Project</button>
-                     </div>
-                  </dialog>
-                  <div class="sidebar-projects-section--project-page-container">
-                     <!-- Projects get added here -->
-                  </div>
-               </div>
-
+                        <dialog class="project-dialog">
+                            <input
+                                type="text"
+                                class="project-name-input"
+                                placeholder="Project Name"
+                            />
+                            <div class="project-dialog-btn-container">
+                                <button class="project-input-cancel-btn">
+                                    Cancel
+                                </button>
+                                <button class="project-input-submit-btn">
+                                    Add Project
+                                </button>
+                            </div>
+                        </dialog>
+                        <div
+                            class="sidebar-projects-section--project-page-container"
+                        >
+                            <!-- Projects get added here -->
+                        </div>
+                    </div>
+                </div>
             </div>
 
-         </div>
-
-         <!-- ! TASK VIEW -->
-         <div class="task-view-container">
-            <div class="task-view-title">Project Title</div>
-            <div class="task-container">
-               <!-- Tasks get added here -->
+            <!-- ! TASK VIEW -->
+            <div class="task-view-container">
+                <div class="task-view-title">Project Title</div>
+                <div class="task-container">
+                    <!-- Tasks get added here -->
+                </div>
             </div>
-         </div>
 
-         <!-- ! DIALOG -->
-         <dialog class="task-dialog">
-            <div class="task-dialog-wrapper">
-               <div class="form">
-                  <div class="task-title-input-container">
-                     <input class="task-title-input" required type="text" name="name" id="name" placeholder="Task Title" />
-                  </div>
-                  <div class="task-description-input-container">
-                     <input class="task-description-input" type="text" name="name" id="name" placeholder="Task Description" />
-                  </div>
-                  <div class="date-input-container">
-                     <input class="date-input" required type="date" />
-                  </div>
-                  <div class="task-details-container">
-                     <div class="priority-input-container">
-                        Priority:
-                        <select class="priority-input">
-                           <option value="LOW" class="priority-low">LOW</option>
-                           <option value="MEDIUM" class="priority-medium">MEDIUM</option>
-                           <option value="HIGH" class="priority-high">HIGH</option>
-                        </select>
-                     </div>
-                     <div class="project-input-container">
-                        Project:
-                        <select class="project-input">
-                           <!-- Projects get added here -->
-                        </select>
-                     </div>
-                  </div>
-               </div>
-               <div class="dialog-buttons">
-                  <button class="dialog-close-dialog-btn">Cancel</button>
-                  <button class="dialog-add-task-btn">Add Task</button>
-               </div>
-            </div> 
-         </dialog>
-      </div>
-   </body>
+            <!-- ! DIALOG -->
+            <dialog class="task-dialog">
+                <div class="task-dialog-wrapper">
+                    <div class="form">
+                        <div class="task-title-input-container">
+                            <input
+                                class="task-title-input"
+                                required
+                                type="text"
+                                name="name"
+                                id="name"
+                                placeholder="Task Title"
+                            />
+                        </div>
+                        <div class="task-description-input-container">
+                            <input
+                                class="task-description-input"
+                                type="text"
+                                name="name"
+                                id="name"
+                                placeholder="Task Description"
+                            />
+                        </div>
+                        <div class="date-input-container">
+                            <input class="date-input" required type="date" />
+                        </div>
+                        <div class="task-details-container">
+                            <div class="priority-input-container">
+                                Priority:
+                                <select class="priority-input">
+                                    <option value="LOW" class="priority-low">
+                                        LOW
+                                    </option>
+                                    <option
+                                        value="MEDIUM"
+                                        class="priority-medium"
+                                    >
+                                        MEDIUM
+                                    </option>
+                                    <option value="HIGH" class="priority-high">
+                                        HIGH
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="project-input-container">
+                                Project:
+                                <select class="project-input">
+                                    <!-- Projects get added here -->
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dialog-buttons">
+                        <button class="dialog-close-dialog-btn">Cancel</button>
+                        <button class="dialog-add-task-btn">Add Task</button>
+                    </div>
+                </div>
+            </dialog>
+        </div>
+    </body>
 </html>

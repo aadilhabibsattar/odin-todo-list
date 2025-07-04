@@ -1,6 +1,9 @@
 const projectList = [];
 
 document.addEventListener("DOMContentLoaded", () => {
+    loadProjectsFromStorage();
+    addProjectsToPage();
+
     const addProjectButton = document.querySelector(
         ".sidebar-projects-section--add-project-button"
     );
@@ -18,16 +21,24 @@ document.addEventListener("DOMContentLoaded", () => {
         projectNameInput.value = "";
     });
     submitBtn.addEventListener("click", () => {
+        if (projectList.length == 5) {
+            alert("You cannot add more than 5 projects.");
+            projectDialog.close();
+            projectNameInput.value = "";
+            return;
+        }
+
         const projectName = projectNameInput.value;
+        if (projectName === "") return;
+
         projectList.push(projectName);
-        addProjectToDOM();
+        addProjectsToPage();
         projectDialog.close();
         projectNameInput.value = "";
-        addDeleteProjectListeners();
     });
 });
 
-function addProjectToDOM() {
+function addProjectsToPage() {
     const projectContainer = document.querySelector(
         ".sidebar-projects-section--project-page-container"
     );
@@ -48,6 +59,8 @@ function addProjectToDOM() {
         projectContainer.innerHTML += projectDiv;
         projectInput.innerHTML += projectOption;
     });
+    saveProjectsToStorage();
+    addDeleteProjectListeners();
 }
 
 function addDeleteProjectListeners() {
@@ -58,8 +71,19 @@ function addDeleteProjectListeners() {
         icon.addEventListener("click", (e) => {
             e.stopPropagation();
             projectList.splice(index, 1);
-            addProjectToDOM();
+            addProjectsToPage();
+            saveProjectsToStorage();
             addDeleteProjectListeners();
         });
     });
+}
+
+function saveProjectsToStorage() {
+    localStorage.setItem("projectList", JSON.stringify(projectList));
+}
+
+function loadProjectsFromStorage() {
+    const storedProjects =
+        JSON.parse(localStorage.getItem("projectList")) || [];
+    projectList.push(...storedProjects);
 }

@@ -1,3 +1,11 @@
+import {
+    format,
+    isToday,
+    isTomorrow,
+    parseISO,
+    differenceInCalendarDays,
+    isBefore,
+} from "date-fns";
 export const taskList = [];
 
 export class Task {
@@ -15,7 +23,9 @@ export class Task {
 
     generateTaskHTML() {
         const priorityClass = this.priority.toLowerCase();
-        const html = `
+        const formattedDate = formatDate(this.dueDate);
+
+        return `
          <div class="task">
             <div class="checkbox">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>check</title><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" /></svg>
@@ -29,7 +39,7 @@ export class Task {
                         <div class="task-calendar-icon-container">
                             <svg class="calendar-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>calendar-blank</title><path d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1" /></svg>
                         </div>
-                        ${this.dueDate}</div>
+                        ${formattedDate}</div>
                         <div class="task-priority priority-${priorityClass}">${this.priority}</div>
                     </div>
                 </div>
@@ -38,7 +48,29 @@ export class Task {
                 </div>
             </div>
          </div>`;
-
-        return html;
     }
+}
+
+function formatDate(rawDate) {
+    const date = parseISO(rawDate);
+    const today = new Date();
+
+    if (isBefore(date, today) && !isToday(date)) {
+        return format(date, "d MMM yyyy");
+    }
+
+    if (isToday(date)) {
+        return "Today";
+    }
+
+    if (isTomorrow(date)) {
+        return "Tomorrow";
+    }
+
+    const diffDays = differenceInCalendarDays(date, today);
+    if (diffDays > 1 && diffDays <= 7) {
+        return format(date, "EEEE");
+    }
+
+    return format(date, "d MMM yyyy");
 }

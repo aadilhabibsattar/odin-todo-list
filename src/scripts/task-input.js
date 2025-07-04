@@ -2,6 +2,9 @@ import { Task, taskList } from "./task-generator.js";
 import { addTasksToPage } from "./dom.js";
 
 document.addEventListener("DOMContentLoaded", () => {
+    loadTasksFromStorage();
+    addTasksToPage();
+
     const addTaskButton = document.querySelector(".add-task-button");
     const taskDialog = document.querySelector(".task-dialog");
     const closeModalButton = document.querySelector(".dialog-close-dialog-btn");
@@ -22,6 +25,15 @@ document.addEventListener("DOMContentLoaded", () => {
         taskDialog.close();
     });
 
+    const today = new Date();
+    const yyyy = today.getFullYear();
+    const mm = String(today.getMonth() + 1).padStart(2, "0");
+    const dd = String(today.getDate()).padStart(2, "0");
+
+    const todayStr = `${yyyy}-${mm}-${dd}`;
+
+    dateInput.setAttribute("min", todayStr);
+
     dialogAddTaskButton.addEventListener("click", () => {
         const title = titleInput.value.trim();
         const description = descriptionInput.value.trim();
@@ -36,6 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const task = new Task(title, description, dueDate, priority, project);
         task.addTaskToList();
+        saveTasksToStorage();
         addTasksToPage();
         resetTaskInputFields();
         taskDialog.close();
@@ -51,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-function addDeleteTaskListeners() {
+export function addDeleteTaskListeners() {
     const deleteTaskIcons = document.querySelectorAll(
         ".delete-icon-container > svg"
     );
@@ -61,7 +74,26 @@ function addDeleteTaskListeners() {
             e.stopPropagation();
             taskList.splice(index, 1);
             addTasksToPage();
+            saveTasksToStorage();
             addDeleteTaskListeners();
         });
+    });
+}
+
+export function saveTasksToStorage() {
+    localStorage.setItem("taskList", JSON.stringify(taskList));
+}
+
+function loadTasksFromStorage() {
+    const storedTasks = JSON.parse(localStorage.getItem("taskList")) || [];
+    storedTasks.forEach((taskData) => {
+        const task = new Task(
+            taskData.title,
+            taskData.description,
+            taskData.dueDate,
+            taskData.priority,
+            taskData.project
+        );
+        taskList.push(task);
     });
 }

@@ -1,4 +1,5 @@
-import { taskList } from "./task-generator";
+import { taskList } from "./task-generator.js";
+import { addDeleteTaskListeners, saveTasksToStorage } from "./task-input.js";
 
 const taskContainer = document.querySelector(".task-container");
 
@@ -15,4 +16,7 @@ export function addTasksToPage() {
             checkbox.classList.toggle("checkbox--checked");
         });
     });
+
+    addDeleteTaskListeners();
+    saveTasksToStorage();
 }
