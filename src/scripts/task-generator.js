@@ -1,20 +1,30 @@
 import {
-    format,
+    parseISO,
+    isBefore,
     isToday,
     isTomorrow,
-    parseISO,
+    isYesterday,
     differenceInCalendarDays,
-    isBefore,
+    format,
 } from "date-fns";
+
 export const taskList = [];
 
 export class Task {
-    constructor(title, description, dueDate, priority, project) {
+    constructor(
+        title,
+        description,
+        dueDate,
+        priority,
+        project,
+        isChecked = false
+    ) {
         this.title = title;
         this.description = description;
         this.dueDate = dueDate;
         this.priority = priority;
         this.project = project;
+        this.isChecked = isChecked;
     }
 
     addTaskToList(task) {
@@ -24,15 +34,19 @@ export class Task {
     generateTaskHTML() {
         const priorityClass = this.priority.toLowerCase();
         const formattedDate = formatDate(this.dueDate);
+        const checkedClass = this.isChecked ? "task-title--checked" : "";
+        const checkboxClass = this.isChecked
+            ? "checkbox checkbox--checked"
+            : "checkbox";
 
         return `
          <div class="task">
-            <div class="checkbox">
+            <div class="${checkboxClass}">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>check</title><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" /></svg>
             </div>
             <div class="task-elements">
                 <div class="task-content">
-                    <div class="task-title">${this.title}</div>
+                    <div class="task-title ${checkedClass}">${this.title}</div>
                     <div class="task-description">${this.description}</div>
                     <div class="task-details-container">
                         <div class="task-due-date">
@@ -55,8 +69,8 @@ function formatDate(rawDate) {
     const date = parseISO(rawDate);
     const today = new Date();
 
-    if (isBefore(date, today) && !isToday(date)) {
-        return format(date, "d MMM yyyy");
+    if (isYesterday(date)) {
+        return "Yesterday";
     }
 
     if (isToday(date)) {

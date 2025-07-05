@@ -1,22 +1,26 @@
 import { taskList } from "./task-generator.js";
-import { addDeleteTaskListeners, saveTasksToStorage } from "./task-input.js";
+import { saveTasksToStorage } from "./task-input.js";
+import { currentFilter } from "./task-views.js";
 
 const taskContainer = document.querySelector(".task-container");
 
-export function addTasksToPage() {
+export function addTasksToPage(filteredTasks = taskList.filter(currentFilter)) {
     taskContainer.innerHTML = "";
-    taskList.forEach((task) => {
+
+    filteredTasks.forEach((task) => {
         const html = task.generateTaskHTML();
         taskContainer.innerHTML += html;
     });
 
     const checkboxes = document.querySelectorAll(".checkbox");
-    checkboxes.forEach((checkbox) => {
+    checkboxes.forEach((checkbox, index) => {
         checkbox.addEventListener("click", () => {
-            checkbox.classList.toggle("checkbox--checked");
+            const task = filteredTasks[index];
+            task.isChecked = !task.isChecked;
+
+            saveTasksToStorage();
+            // addTasksToPage(taskList.filter(currentFilter));
+            addTasksToPage();
         });
     });
-
-    addDeleteTaskListeners();
-    saveTasksToStorage();
 }

@@ -84,6 +84,11 @@
     margin-left: 0.3rem;
 }
 
+.task-title--checked {
+    text-decoration: line-through;
+    color: gray;
+}
+
 .task-description {
     font-size: 0.9rem;
     margin-left: 0.3rem;

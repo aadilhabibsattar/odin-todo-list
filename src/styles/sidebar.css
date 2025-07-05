@@ -72,6 +72,7 @@
     margin-bottom: 5vh;
 }
 
+.sidebar-tasks-section--all-tasks-icon > svg,
 .sidebar-tasks-section--today-sun-icon > svg,
 .sidebar-tasks-section--completed-check-icon > svg {
     width: 1.5rem;

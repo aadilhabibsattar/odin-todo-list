@@ -1,3 +1,5 @@
+import { filterByProject } from "./task-views.js";
+
 const projectList = [];
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -36,6 +38,8 @@ document.addEventListener("DOMContentLoaded", () => {
         projectDialog.close();
         projectNameInput.value = "";
     });
+
+    addProjectClickListeners();
 });
 
 function addProjectsToPage() {
@@ -74,6 +78,7 @@ function addDeleteProjectListeners() {
             addProjectsToPage();
             saveProjectsToStorage();
             addDeleteProjectListeners();
+            addProjectClickListeners();
         });
     });
 }
@@ -86,4 +91,18 @@ function loadProjectsFromStorage() {
     const storedProjects =
         JSON.parse(localStorage.getItem("projectList")) || [];
     projectList.push(...storedProjects);
+}
+
+function addProjectClickListeners() {
+    const projectDivs = document.querySelectorAll(
+        ".sidebar-projects-section--project-page"
+    );
+
+    projectDivs.forEach((projectDiv) => {
+        projectDiv.addEventListener("click", (e) => {
+            const projectName =
+                projectDiv.querySelector(".project-name").textContent;
+            filterByProject(projectName);
+        });
+    });
 }
