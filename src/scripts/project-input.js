@@ -65,6 +65,7 @@ function addProjectsToPage() {
     });
     saveProjectsToStorage();
     addDeleteProjectListeners();
+    addProjectClickListeners();
 }
 
 function addDeleteProjectListeners() {

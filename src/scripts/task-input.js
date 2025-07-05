@@ -52,7 +52,6 @@ document.addEventListener("DOMContentLoaded", () => {
         addTasksToPage();
         resetTaskInputFields();
         taskDialog.close();
-        addDeleteTaskListeners();
     });
 
     function resetTaskInputFields() {

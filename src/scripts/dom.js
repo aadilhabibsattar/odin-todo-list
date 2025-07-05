@@ -1,5 +1,5 @@
 import { taskList } from "./task-generator.js";
-import { saveTasksToStorage } from "./task-input.js";
+import { addDeleteTaskListeners, saveTasksToStorage } from "./task-input.js";
 import { currentFilter } from "./task-views.js";
 
 const taskContainer = document.querySelector(".task-container");
@@ -19,8 +19,9 @@ export function addTasksToPage(filteredTasks = taskList.filter(currentFilter)) {
             task.isChecked = !task.isChecked;
 
             saveTasksToStorage();
-            // addTasksToPage(taskList.filter(currentFilter));
             addTasksToPage();
         });
     });
+
+    addDeleteTaskListeners();
 }
