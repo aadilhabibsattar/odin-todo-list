@@ -12,7 +12,7 @@
     --secondaryColor: #747e8f;
     --blueColor: #008087;
     --lightColor: #eeeeee;
-    --greenColor: #01965a;
+    --greenColor: #01985c;
     --redColor: #ef5132;
     --yellowColor: #e8c527;
     --sidebarHoverColor: rgba(32, 35, 40, 0.3);
@@ -29,6 +29,7 @@ body {
     font-family: "Manrope", sans-serif;
     color: var(--lightColor);
     overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 svg {

@@ -18,8 +18,17 @@ export function addTasksToPage(filteredTasks = taskList.filter(currentFilter)) {
             const task = filteredTasks[index];
             task.isChecked = !task.isChecked;
 
-            saveTasksToStorage();
-            addTasksToPage();
+            const taskElement = checkbox.closest(".task");
+            if (task.isChecked) {
+                taskElement.classList.add("task--fade-out");
+                setTimeout(() => {
+                    saveTasksToStorage();
+                    addTasksToPage();
+                }, 200);
+            } else {
+                saveTasksToStorage();
+                addTasksToPage();
+            }
         });
     });
 

@@ -1,4 +1,5 @@
 import { filterByProject } from "./task-views.js";
+import { clearActiveStates } from "./task-views.js";
 
 const projectList = [];
 
@@ -23,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
         projectNameInput.value = "";
     });
     submitBtn.addEventListener("click", () => {
-        if (projectList.length == 5) {
+        if (projectList.length == 7) {
             alert("You cannot add more than 5 projects.");
             projectDialog.close();
             projectNameInput.value = "";
@@ -101,6 +102,9 @@ function addProjectClickListeners() {
 
     projectDivs.forEach((projectDiv) => {
         projectDiv.addEventListener("click", (e) => {
+            clearActiveStates();
+            projectDiv.classList.add("active");
+
             const projectName =
                 projectDiv.querySelector(".project-name").textContent;
             filterByProject(projectName);

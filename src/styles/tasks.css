@@ -41,11 +41,20 @@
     cursor: pointer;
     user-select: none;
     -webkit-user-select: none;
+
+    transition: all 0.2s ease-in-out;
 }
 
 .checkbox > svg {
     width: 1rem;
     opacity: 0;
+}
+
+.checkbox:hover {
+    background-color: rgba(1, 152, 92, 0.3);
+}
+.checkbox:hover > svg {
+    opacity: 0.3;
 }
 
 .checkbox--checked {
@@ -71,12 +80,15 @@
     gap: 0.2rem;
     padding: 0.2rem 0.2rem;
     width: 100%;
+
+    transition: all 0.1s ease-in-out;
 }
 
 .task-content:hover {
-    background-color: hsl(214, 15%, 25%);
+    background-color: hsl(214, 15%, 20%);
     box-shadow: 0px 2px 3px 3px rgba(0, 0, 0, 0.2);
     border-radius: 0.5rem;
+    cursor: pointer;
 }
 
 .task-title {
@@ -132,4 +144,9 @@
 
 .delete-icon:hover {
     fill: var(--redColor);
+}
+
+.task--fade-out {
+    opacity: 0;
+    transition: opacity 0.2s ease;
 }

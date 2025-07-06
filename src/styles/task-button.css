@@ -1,9 +1,14 @@
+.add-task-button-container {
+    width: 100%;
+    margin-top: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .add-task-button {
-    position: fixed;
-    bottom: 2rem;
-    left: 2.5rem;
     background-color: var(--blueColor);
-    z-index: 2;
 
     color: var(--lightColor);
     padding: 1rem;
@@ -18,13 +23,11 @@
     gap: 0.5rem;
     justify-content: space-between;
     align-items: center;
-
-    margin-bottom: 0.5rem;
 }
 
 .add-task-button:hover {
     background-color: #008990;
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
 .add-task-button--plus-icon {
